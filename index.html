@@ -184,12 +184,16 @@
     </script>
     <script src="./static/js/2.f5fa8177.chunk.js"></script>
     <script src="./static/js/main.e7a33c55.chunk.js"></script>
-  <script>
-    if (self == top) {
-        document.documentElement.style.display = 'block'; 
-    } else {
-         top.location = self.location; 
-    }
-  </script>
+    <style id="antiClickjack">
+      body{display:none !important;}
+    </style>
+    <script type="text/javascript">
+      if (self === top) { 
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack); 
+      } else { 
+        top.location = self.location;
+      } 
+    </script>
   </body>
 </html>
